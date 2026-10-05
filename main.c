@@ -2,31 +2,31 @@
 
 int main(void)
 {
-    int num1, num2;
-    char op;
-    int result;
+    int answer = 59;
+    int num;
+    int count = 0;
 
-    printf("Enter calculation: ");
-    scanf("%d %c %d", &num1, &op, &num2);
+    do
+    {
+        printf("Enter a number: ");
+        scanf("%d", &num);
+        count++;
 
-    if (op == '+')
-    {
-        result = num1 + num2;
-    }
-    else if (op == '-')
-    {
-        result = num1 - num2;
-    }
-    else if (op == '*')
-    {
-        result = num1 * num2;
-    }
-    else if (op == '/')
-    {
-        result = num1 / num2;
-    }
+        if (num > answer)
+        {
+            printf("Too high.\n");
+        }
+        else if (num < answer)
+        {
+            printf("Too low.\n");
+        }
+        else
+        {
+            printf("Correct!\n");
+            printf("Attempts: %d\n", count);
+        }
 
-    printf("%d %c %d = %d\n", num1, op, num2, result);
+    } while (num != answer);
 
     return 0;
 }
